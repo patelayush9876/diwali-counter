@@ -1,0 +1,10 @@
+{
+  "description": "Experience a stunning countdown to Diwali and Dhanteras 2026 with elegant design and real-time updates, perfect for celebrating the festival of lights.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

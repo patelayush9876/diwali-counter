@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-night: #06080f;
+  --color-navy: #0a0d1a;
+  --color-navy-light: #111628;
+  --color-gold: #d4a017;
+  --color-gold-light: #f0c040;
+  --color-gold-pale: #fde68a;
+  --color-amber: #e07b20;
+  --color-ember: #c0392b;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #06080f;
+  color: #fde68a;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 0; }
+
+/* Particles */
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(var(--drift)) scale(0.4); opacity: 0; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(var(--sway, 12px)); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px 2px rgba(212, 160, 23, 0.25), 0 0 60px 10px rgba(212, 160, 23, 0.08); }
+  50%       { box-shadow: 0 0 30px 6px rgba(212, 160, 23, 0.45), 0 0 80px 20px rgba(212, 160, 23, 0.15); }
+}
+
+@keyframes pulse-seconds {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 20px rgba(240, 192, 64, 0.4); }
+  50%       { transform: scale(1.04); text-shadow: 0 0 40px rgba(240, 192, 64, 0.9); }
+}
+
+@keyframes diya-flicker {
+  0%, 100% { opacity: 0.85; transform: scaleY(1) translateY(0); }
+  25%       { opacity: 1;    transform: scaleY(1.08) translateY(-1px); }
+  50%       { opacity: 0.9;  transform: scaleY(0.94) translateY(1px); }
+  75%       { opacity: 0.95; transform: scaleY(1.04) translateY(-0.5px); }
+}
+
+@keyframes fade-slide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-up var(--dur, 8s) var(--delay, 0s) infinite ease-in;
+}
+
+.seconds-animate {
+  animation: pulse-seconds 1s ease-in-out infinite;
+}
+
+.card-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.flame {
+  animation: diya-flicker 1.8s ease-in-out infinite;
+}
+
+.fade-slide {
+  animation: fade-slide 0.4s ease-out forwards;
+}
+
+.rangoli {
+  animation: spin-slow 60s linear infinite;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 20px;
+}
